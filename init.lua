@@ -787,8 +787,6 @@ require('lazy').setup({
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 vim.keymap.set('n', '<C-b>', '<Cmd>Neotree toggle<CR>')
--- Should delete this, doesnt work
-vim.api.nvim_set_keymap('n', '<leader>b', ":lua require('config/telescope').my_buffer()<cr>", { noremap = true })
 
 vim.api.nvim_set_keymap('n', '<leader>ma', ':lua require("harpoon.mark").add_file()<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>mr', ':lua require("harpoon.mark").rm_file()<cr>', { noremap = true, silent = true })
