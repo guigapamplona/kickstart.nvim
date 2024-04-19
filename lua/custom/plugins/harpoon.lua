@@ -34,6 +34,17 @@ return {
         desc = 'Harpoon to File ' .. i,
       })
     end
+
+    for i = 1, 5 do
+      table.insert(keys, {
+        '<leader>t' .. i,
+        function()
+          require('harpoon.term').gotoTerminal(i)
+        end,
+        desc = 'Navigate to Terminal ' .. i,
+      })
+    end
+
     return keys
   end,
 }
