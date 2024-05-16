@@ -453,7 +453,7 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- clangd = {},
-        -- gopls = {},
+        gopls = {},
         pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -753,7 +753,7 @@ require('lazy').setup({
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
@@ -797,3 +797,6 @@ vim.o.shell = 'powershell'
 vim.o.shellcmdflag = '-command'
 vim.o.shellquote = '\\"'
 vim.o.shellxquote = ''
+
+vim.api.nvim_set_option('timeoutlen', 500)
+vim.api.nvim_set_keymap('i', 'jj', '<ESC>', { noremap = true, silent = true })
