@@ -799,4 +799,17 @@ vim.o.shellquote = '\\"'
 vim.o.shellxquote = ''
 
 vim.api.nvim_set_option('timeoutlen', 500)
-vim.api.nvim_set_keymap('i', 'jj', '<ESC>', { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('i', 'jj', '<ESC>', { noremap = true, silent = true })
+
+-- To disable default tab in copilot and change it to shift tab
+vim.keymap.set('i', '<S-Tab>', 'copilot#Accept("\\<CR>")', {
+  expr = true,
+  replace_keycodes = false
+})
+vim.g.copilot_no_tab_map = true
+
+-- Set tab to 2 spaces
+vim.o.smartindent = true -- syntax aware indentations for newline inserts
+vim.o.expandtab = true -- expand tab input with spaces characters
+vim.o.tabstop = 2 -- num of space characters per tab
+vim.o.shiftwidth = 2 -- spaces per indentation level
